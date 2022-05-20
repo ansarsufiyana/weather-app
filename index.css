@@ -7,7 +7,7 @@ body {
     margin: 0;
     font-family: 'Macondo', cursive;
     background: #222;
-    background-image: url('https://source.unsplash.com/random/?city');
+    /* background-image: url('https://source.unsplash.com/random/?city'); */
     font-size: 120%;
 }
 
@@ -77,6 +77,17 @@ h1.temp{
     margin-left: 8px;
 }
 
-/* .icon {
+.weather.loading {
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+}
 
-} */
+.weather.loading:after{
+    visibility: visible;
+    content: "Loading...";
+    color: white;
+    position: absolute;
+    top: 0%;
+    left: 20px;
+}
