@@ -1,3 +1,4 @@
+//  // fetching weather api from openweather.org
 let weather = {
   apikey: "45fe15572d2ef49cfe33e837652bff53",
   fetchWeather: function (city) {
@@ -10,6 +11,7 @@ let weather = {
       .then((Response) => Response.json())
       .then((data) => this.displayWeather(data));
   },
+  // // intigrating the data from api into our displayed weather theme
   displayWeather: function (data) {
     const { name } = data;
     const { icon, description } = data.weather[0];
@@ -30,15 +32,17 @@ let weather = {
     
 
   }, 
+  // // setting up search bar to allow user to search loction 
   search: function () {
     this.fetchWeather(document.querySelector(".search-bar").value);
   },
 };
-
+ // // adding click event
 document.querySelector(".search button").addEventListener("click", function () {
   weather.search();
 });
 
+// // adding key enter event
 document
   .querySelector(".search-bar")
   .addEventListener("keyup", function (event) {
@@ -47,4 +51,5 @@ document
     }
   });
 
+// //defualt loction set to locial area pakistan
 weather.fetchWeather("pakistan");
